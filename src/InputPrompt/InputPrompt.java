@@ -10,6 +10,11 @@ public class InputPrompt {
     public static String promptString(Scanner scanner, String prompt) {
         while (true) {
             System.out.print(prompt);
+            if (!scanner.hasNextLine()) {
+                // If input stream is closed or no full line is available, avoid throwing and return empty string
+                System.out.println("No input available. Using empty string.");
+                return "";
+            }
             String line = scanner.nextLine().trim();
             if (!line.isEmpty()) {
                 return line;
