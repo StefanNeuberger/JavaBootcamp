@@ -1,5 +1,3 @@
-package JavaBasics_4.java;
-
 import java.util.Scanner;
 
 public class JavaBasics_4 {

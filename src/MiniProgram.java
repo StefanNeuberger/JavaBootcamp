@@ -1,12 +1,14 @@
+import InputPrompt.InputPrompt;
+
 import java.util.Scanner;
 
 public class MiniProgram {
 
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            int num3 = JavaBasics_2.promptInt(scanner, "first integer: ");
-            int num4 = JavaBasics_2.promptInt(scanner, "second integer: ");
-            double num5 = JavaBasics_2.promptDouble(scanner, "double: ");
+            int num3 = InputPrompt.promptInt(scanner, "first integer: ");
+            int num4 = InputPrompt.promptInt(scanner, "second integer: ");
+            double num5 = InputPrompt.promptDouble(scanner, "double: ");
 
             double sum = num3 + num4 + num5;
 
