@@ -15,6 +15,8 @@ public class Main {
 
         // Java Basics - If-Else Exercise
         JavaBasics_4.main(args);
+
+        JavaBasics_5.main(args);
     }
 }
 
