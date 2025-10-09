@@ -1,3 +1,7 @@
+package Exercises;
+
+import Calculator.Calculator;
+
 public class JavaBasics_5 {
     static void printHello() {
         System.out.println("Hello World!");
@@ -11,24 +15,7 @@ public class JavaBasics_5 {
         System.out.println("Hallo " + name);
     }
 
-    static int add(int a, int b) {
-        return a + b;
-    }
 
-    static int subtract(int a, int b) {
-        return a - b;
-    }
-
-    static int multiply(int a, int b) {
-        return a * b;
-    }
-
-    static double divide(int a, int b) {
-        if (b == 0) {
-            throw new ArithmeticException("Cannot divide by zero");
-        }
-        return (double) a / b;
-    }
 
     static double calcutaleArea(double width, double height) {
         return width * height;
@@ -42,7 +29,7 @@ public class JavaBasics_5 {
     }
 
     static void printSumMessage(int a, int b) {
-        int sum = add(a, b);
+        int sum = Calculator.add(a, b);
         System.out.println("Summe: " + sum);
     }
 
@@ -62,7 +49,7 @@ public class JavaBasics_5 {
         printName("Hans");
 
         // 2.1
-        int sum = add(1, 2);
+        int sum = Calculator.add(1, 2);
         System.out.println("Summe: " + sum);
 
         // 2.2
@@ -80,12 +67,12 @@ public class JavaBasics_5 {
         printSumMessage(1, 2);
 
         // 3.3
-        int sum1 = add(1, 2);
-        int sum3 = subtract(10, 5);
-        int sum4 = multiply(10, 5);
+        int sum1 = Calculator.add(1, 2);
+        int sum3 = Calculator.subtract(10, 5);
+        int sum4 = Calculator.multiply(10, 5);
         double sum5 = Double.NaN; // Use NaN as a sentinel for "not successfully initialized"
         try {
-            sum5 = divide(10, 3);
+            sum5 = Calculator.divide(10, 3);
         } catch (ArithmeticException e) {
             System.out.println("Error while dividing: " + e.getMessage());
         }

@@ -1,4 +1,4 @@
-import org.w3c.dom.ls.LSOutput;
+import Exercises.*;
 
 public class Main {
 
@@ -16,6 +16,7 @@ public class Main {
         // Java Basics - If-Else Exercise
         JavaBasics_4.main(args);
 
+        // Java Basics - Methods Exercise
         JavaBasics_5.main(args);
     }
 }

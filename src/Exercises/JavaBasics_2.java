@@ -1,3 +1,5 @@
+package Exercises;
+
 import InputPrompt.InputPrompt;
 
 import java.util.Scanner;
@@ -74,7 +76,7 @@ public class JavaBasics_2 {
 
         // IMPORTANT: Do not use try-with-resources for Scanner(System.in) here.
         // Closing a Scanner created from System.in will also close System.in itself,
-        // which would break subsequent input in MiniProgram when run from Main.
+        // which would break subsequent input in Exercises.MiniProgram when run from Main.
         Scanner scanner = new Scanner(System.in);
 
         // 3.1
@@ -110,7 +112,7 @@ public class JavaBasics_2 {
             System.out.println(userChar + " is not a Vowel.");
         }
 
-        // Note: intentionally not closing 'scanner' to keep System.in available for MiniProgram
+        // Note: intentionally not closing 'scanner' to keep System.in available for Exercises.MiniProgram
 
         // 3.4
 
