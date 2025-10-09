@@ -1,45 +1,8 @@
+import InputPrompt.InputPrompt;
+
 import java.util.Scanner;
 
 public class JavaBasics_2 {
-    static String fallbackMessage = "Please enter a non-empty value.";
-
-    // Helper to read a non-empty line of text
-    public static String promptString(Scanner scanner, String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            String line = scanner.nextLine().trim();
-            if (!line.isEmpty()) {
-                return line;
-            }
-            System.out.println(fallbackMessage);
-        }
-    }
-
-    // Helper to read a single alphabetical letter (A-Z)
-    public static char promptChar(Scanner scanner, String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            String line = scanner.nextLine().trim();
-
-            if (line.isEmpty()) {
-                System.out.println(fallbackMessage);
-                continue;
-            }
-
-            if (line.length() == 1) {
-                char ch = line.charAt(0);
-                if (Character.isLetter(ch)) {
-                    return ch;
-                } else {
-                    System.out.println("Please enter a letter (A-Z). No digits or symbols.");
-                    continue;
-                }
-            }
-
-            // If multiple characters were entered, enforce exactly one letter
-            System.out.println("Please enter exactly one letter (A-Z).");
-        }
-    }
 
     // checks if a given char is a vowel (case-insensitive)
     public static boolean isVowel(char ch) {
@@ -53,49 +16,6 @@ public class JavaBasics_2 {
         return false;
     }
 
-
-    // Helper to read an int with validation
-    public static int promptInt(Scanner scanner, String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            if (scanner.hasNextInt()) {
-                int value = scanner.nextInt();
-                scanner.nextLine(); // consume the rest of the line
-                return value;
-            } else {
-                System.out.println("That's not a valid integer. Try again.");
-                scanner.nextLine(); // discard invalid input
-            }
-        }
-    }
-
-    // Helper to read a non-negative int (e.g., for age)
-    public static int promptNonNegativeInt(Scanner scanner, String prompt) {
-        while (true) {
-            int value = promptInt(scanner, prompt);
-            if (value >= 0) {
-                return value;
-            }
-            System.out.println("Please enter a non-negative integer.");
-        }
-    }
-
-    // Helper to read a double with validation
-    public static double promptDouble(Scanner scanner, String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            if (!scanner.hasNextLine()) {
-                // No complete line available; wait for more input in the loop
-                continue;
-            }
-            String line = scanner.nextLine().trim();
-            try {
-                return Double.parseDouble(line);
-            } catch (NumberFormatException e) {
-                System.out.println("That's not a valid double. Try again.");
-            }
-        }
-    }
 
     public static void main(String[] args) {
 
@@ -159,9 +79,9 @@ public class JavaBasics_2 {
 
         // 3.1
 
-        String userName = promptString(scanner, "Please enter your name: ");
-        int userAge = promptNonNegativeInt(scanner, "Please enter your age: ");
-        char favoriteLetter = promptChar(scanner, "Please enter your favorite letter: ");
+        String userName = InputPrompt.promptString(scanner, "Please enter your name: ");
+        int userAge = InputPrompt.promptNonNegativeInt(scanner, "Please enter your age: ");
+        char favoriteLetter = InputPrompt.promptChar(scanner, "Please enter your favorite letter: ");
 
         System.out.println("Hi " + userName + ", your favorite letter is " + Character.toUpperCase(favoriteLetter) + " and you are " + userAge + " years old.");
 
@@ -182,7 +102,7 @@ public class JavaBasics_2 {
 
         // 3.3
 
-        char userChar = promptChar(scanner, "Please enter your favorite letter: ");
+        char userChar = InputPrompt.promptChar(scanner, "Please enter your favorite letter: ");
         boolean isVowel = isVowel(userChar);
         if (isVowel) {
             System.out.println(userChar + " is a Vowel.");

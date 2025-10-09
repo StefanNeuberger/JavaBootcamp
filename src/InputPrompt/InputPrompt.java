@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class InputPrompt {
 
+    static String fallbackMessage = "Please enter a non-empty value.";
+
     // Helper to read a non-empty line of text
     public static String promptString(Scanner scanner, String prompt) {
         while (true) {
@@ -12,7 +14,50 @@ public class InputPrompt {
             if (!line.isEmpty()) {
                 return line;
             }
-            System.out.println("Please enter a non-empty value.");
+            System.out.println(fallbackMessage);
+        }
+    }
+
+    // Helper to read a double with validation
+    public static double promptDouble(Scanner scanner, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            if (!scanner.hasNextLine()) {
+                // No complete line available; wait for more input in the loop
+                continue;
+            }
+            String line = scanner.nextLine().trim();
+            try {
+                return Double.parseDouble(line);
+            } catch (NumberFormatException e) {
+                System.out.println("That's not a valid double. Try again.");
+            }
+        }
+    }
+
+    // Helper to read a single alphabetical letter (A-Z)
+    public static char promptChar(Scanner scanner, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            String line = scanner.nextLine().trim();
+
+            if (line.isEmpty()) {
+                System.out.println(fallbackMessage);
+                continue;
+            }
+
+            if (line.length() == 1) {
+                char ch = line.charAt(0);
+                if (Character.isLetter(ch)) {
+                    return ch;
+                } else {
+                    System.out.println("Please enter a letter (A-Z). No digits or symbols.");
+                    continue;
+                }
+            }
+
+            // If multiple characters were entered, enforce exactly one letter
+            System.out.println("Please enter exactly one letter (A-Z).");
         }
     }
 
