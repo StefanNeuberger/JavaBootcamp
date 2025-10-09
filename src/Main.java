@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String[] outputs = {"Hello World", "How are you?", "This is a test."};
 
         // initialize the scanner
         // try-with-resources syntax -> automatically closes the resource
