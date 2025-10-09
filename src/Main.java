@@ -1,3 +1,6 @@
+import JavaBasics_4.java.JavaBasics_4;
+
+import java.util.Scanner;
 
 public class Main {
 
@@ -11,6 +14,9 @@ public class Main {
 
         // Java Basics - Operators Exercise
         JavaBasics_3.main(args);
+
+        // Java Basics - If-Else Exercise
+        JavaBasics_4.main(args);
     }
 }
 
