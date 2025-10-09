@@ -4,9 +4,9 @@ public class MiniProgram {
 
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            int num3 = Main.promptInt(scanner, "first integer: ");
-            int num4 = Main.promptInt(scanner, "second integer: ");
-            double num5 = Main.promptDouble(scanner, "double: ");
+            int num3 = JavaBasics_2.promptInt(scanner, "first integer: ");
+            int num4 = JavaBasics_2.promptInt(scanner, "second integer: ");
+            double num5 = JavaBasics_2.promptDouble(scanner, "double: ");
 
             double sum = num3 + num4 + num5;
 
