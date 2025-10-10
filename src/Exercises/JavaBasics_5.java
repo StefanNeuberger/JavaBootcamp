@@ -16,7 +16,6 @@ public class JavaBasics_5 {
     }
 
 
-
     static double calcutaleArea(double width, double height) {
         return width * height;
     }
@@ -24,7 +23,6 @@ public class JavaBasics_5 {
     static void checkPositive(int number) {
         if (number < 0) {
             System.out.println("Negative Number");
-            return;
         }
     }
 
@@ -33,17 +31,13 @@ public class JavaBasics_5 {
         System.out.println("Summe: " + sum);
     }
 
-    static boolean isEven(int number) {
-        return number % 2 == 0;
-    }
-
     public static void main(String[] args) {
 
         // 1.1
         printHello();
 
         // 1.2
-        System.out.println( getGreeting());
+        System.out.println(getGreeting());
 
         // 1.3
         printName("Hans");
@@ -60,8 +54,8 @@ public class JavaBasics_5 {
         checkPositive(2);
 
         // 3.1
-        System.out.println(isEven(2));
-        System.out.println(isEven(3));
+        System.out.println(Calculator.isEven(2));
+        System.out.println(Calculator.isEven(3));
 
         // 3.2
         printSumMessage(1, 2);
@@ -77,7 +71,7 @@ public class JavaBasics_5 {
             System.out.println("Error while dividing: " + e.getMessage());
         }
         // Check whether sum5 was successfully initialized (i.e., division succeeded)
-        if(!Double.isNaN(sum5)) {
+        if (!Double.isNaN(sum5)) {
             System.out.println("division result: " + sum5);
         }
 

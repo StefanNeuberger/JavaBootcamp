@@ -19,7 +19,9 @@ public class Main {
         // Java Basics - Methods Exercise
         JavaBasics_5.main(args);
 
-        //test
+        // Java Basics - Arrays Exercise
+        JavaBasics_6.main(args);
+
     }
 }
 

@@ -19,4 +19,9 @@ public class Calculator {
         }
         return (double) a / b;
     }
+
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
 }
